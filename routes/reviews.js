@@ -10,11 +10,10 @@ import {
 
 const reviewRouter = express.Router();
 
-reviewRouter.get("/", onlyAdminAndStaff, expressAsyncHandler(getAllReviews));
+reviewRouter.get("/", expressAsyncHandler(getAllReviews));
 
 reviewRouter.get(
   "/bookID/:bookID",
-  isAuth,
   expressAsyncHandler(getBookReviews)
 );
 
