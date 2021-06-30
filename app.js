@@ -33,6 +33,10 @@ app.get("/api/config/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || "sb");
 });
 
+app.get("/api/config/database", (req, res) => {
+  res.send(process.env.MONGODB_URL);
+});
+
 app.use("/api/users", usersRouter);
 app.use("/api/books", booksRouter);
 app.use("/api/managers", managersRouter);
