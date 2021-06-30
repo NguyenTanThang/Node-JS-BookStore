@@ -101,6 +101,7 @@ export const signup = async (req, res) => {
     username,
     email,
     password,
+    validated: true
   });
 
   const createdUser = await user.save();
